@@ -20,19 +20,21 @@ class HomePage extends StatelessWidget {
         title: const Text('Personal spent'),
         centerTitle: true,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            child: const Card(
-              child: Text('Graph'),
-              elevation: 5,
-              color: Colors.blue,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: const Card(
+                child: Text('Graph'),
+                elevation: 5,
+                color: Colors.blue,
+              ),
             ),
-          ),
-          TransactionUser(),
-        ],
+            TransactionUser(),
+          ],
+        ),
       ),
     );
   }

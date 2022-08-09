@@ -17,8 +17,11 @@ class ChartBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        FittedBox(
-          child: Text(value.toStringAsFixed(2)),
+        Container(
+          height: 20,
+          child: FittedBox(
+            child: Text(value.toStringAsFixed(2)),
+          ),
         ),
         const SizedBox(height: 5),
         Container(
@@ -82,7 +85,7 @@ class Chart extends StatelessWidget {
         'day': DateFormat.E().format(weekDay)[0],
         'value': totalSum,
       };
-    });
+    }).reversed.toList();
   }
 
   double get _weekTotalValue {
@@ -95,7 +98,7 @@ class Chart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 6,
-      margin: EdgeInsets.all(20),
+      margin: const EdgeInsets.all(20),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
